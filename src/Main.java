@@ -4,6 +4,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		JOptionPane.showMessageDialog(null, "Ho0la");
+		JOptionPane.showMessageDialog(null, "Ho0la :D");
 	}
 }
