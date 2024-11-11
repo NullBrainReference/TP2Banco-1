@@ -4,8 +4,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		JOptionPane.showMessageDialog(null, "Ho0la soy franco");
-		JOptionPane.showMessageDialog(null, args);
-		JOptionPane.showMessageDialog(null, "Hola soy ghami :D");
+		Usuario.Login("", "");
+		
+	//Primero crearlos en la lista de usuarios en general, 
+		//y despues revisar si estan en la lista de clientes
+		//o en administrador
+		
 	}
 }
