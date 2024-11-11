@@ -6,5 +6,6 @@ public class Main {
 		
 		JOptionPane.showMessageDialog(null, "Ho0la soy franco");
 		JOptionPane.showMessageDialog(null, args);
+		JOptionPane.showMessageDialog(null, "Hola soy ghami :D");
 	}
 }
