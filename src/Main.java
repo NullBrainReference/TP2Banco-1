@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		JOptionPane.showMessageDialog(null, "Ho0la :D");
+		JOptionPane.showMessageDialog(null, "Ho0la soy franco");
 		JOptionPane.showMessageDialog(null, args);
 	}
 }
