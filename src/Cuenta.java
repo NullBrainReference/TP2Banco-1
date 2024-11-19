@@ -8,7 +8,7 @@ public class Cuenta {
 		super();
 		this.nroCuenta = nroCuenta;
 		this.saldo = saldo;
-		this.movimientos = movimientos;
+		//this.movimientos = movimientos;
 	}
 	public int getNroCuenta() {
 		return nroCuenta;
@@ -32,6 +32,4 @@ public class Cuenta {
 	public String toString() {
 		return "Cuenta [nroCuenta=" + nroCuenta + ", saldo=" + saldo + ", movimientos=" + movimientos + "]";
 	}
-	
-	
 }

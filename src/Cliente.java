@@ -1,4 +1,3 @@
-import javax.swing.JOptionPane;
 
 public class Cliente extends Usuario{
 	private String tipo;
@@ -25,8 +24,8 @@ public class Cliente extends Usuario{
 		return "Cliente [tipo=" + tipo + ", cuenta=" + cuenta + "]";
 	}
 	@Override
-	public void Menu() {
-		int opcion = JOptionPane.showOptionDialog(null, cuenta, tipo, 0, 0, null, OpcionesCliente.values(), OpcionesCliente.values());
+	public OpcionesCliente[] Menu() {
+		return new OpcionesCliente[] { OpcionesCliente.Transferir, OpcionesCliente.Retirar, OpcionesCliente.Depositar };
 	}
 	
 	
