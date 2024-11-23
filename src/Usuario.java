@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public abstract class Usuario {
@@ -5,7 +6,7 @@ public abstract class Usuario {
 	private String dni;
 	private String contrasena;
 	
-	private static LinkedList<Usuario> usuarios;
+	private static LinkedList<Usuario> usuarios = new LinkedList<Usuario>();
 	
 	public Usuario(String nombre, String dni, String contrasena) {
 		super();
@@ -74,7 +75,7 @@ public abstract class Usuario {
 		}
 		
 		
-		var user = new Cliente(nombre, dni, contrasena, contrasena, new Cuenta(0, 0));
+		var user = new Cliente(nombre, dni, contrasena, null);
 		usuarios.add(user);
 		
 		Main.ThrowUIMessage("User created!");
@@ -87,9 +88,49 @@ public abstract class Usuario {
 		return "Usuario [nombre=" + nombre + ", dni=" + dni + ", contrasena=" + contrasena + "]";
 	}
 	
-	public void Login() {
-	
+	public static Usuario Login(String dni, String contrasena) {
+		if (dni == null) {
+			Main.ThrowUIMessage("DNI is empty");
+			return null;
+		}
+		
+		if (dni.length() == 0) {
+			Main.ThrowUIMessage("DNI is empty");
+			return null;
+		}
+		
+		if (contrasena == null) {
+			Main.ThrowUIMessage("pass is empty");
+			return null;
+		}
+		if (contrasena.length() == 0) {
+			Main.ThrowUIMessage("pass is empty");
+			return null;
+		}
+		
+		for (Usuario usuario : usuarios) {
+			if (usuario.dni.equals(dni) && usuario.contrasena.equals(contrasena)) {
+				return usuario;
+			}
+		}
+		
+		Main.ThrowUIMessage("User was not found!");
+		
+		return null;
 	}
+	
 	public abstract OpcionesCliente[] Menu();
+	
+	public abstract UsuarioView getView();
+	
+	//Exists only to present test data, not a part of the behavior
+	public static void CreateDummyAccounts() {
+		usuarios.add(new Cliente("Vasya", "11111", "123456", null));
+		for (int i = 1; i < 100; i++) {
+			var client = new Cliente("Juan", "11111" + i, "12345" + i, null);
+			client.getCuenta().depositar(i * 100);
+			usuarios.add(client);
+		}
+	}
 
 }

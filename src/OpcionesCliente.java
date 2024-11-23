@@ -4,9 +4,13 @@ public enum OpcionesCliente {
 	Depositar("Depositar"),
 	Retirar("Retirar"),
 	
+	NuevaCuenta("Nueva Cuenta"),
+	ElegirCuenta("Elegir Cuenta"),
+	
 	Login("Login"),
 	Register("Register"),
-	Exit("Exit")
+	Exit("Exit"),
+	LogOut("Log Out")
 	;
 	
 	private String stringValue;

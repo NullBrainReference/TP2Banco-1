@@ -2,10 +2,11 @@ import javax.swing.JOptionPane;
 
 public class Main {
 	public static void main(String[] args) {
-		
+		Usuario.CreateDummyAccounts();
 		//Usuario.getUsuarios();
+		CancellationToken cancelToken = new CancellationToken();
 		Usuario user = null;
-		while(true) {
+		while(!cancelToken.wasCanceled()) {
 			
 			while(user == null) {
 				OpcionesCliente[] options = new OpcionesCliente[] {OpcionesCliente.Login, OpcionesCliente.Register, OpcionesCliente.Exit};
@@ -13,11 +14,11 @@ public class Main {
 				
 				switch (selection) {
 					case Login: {
-						user = Login();
+						user = UsuarioView.Login();
 						break;
 					}
 					case Register: {
-						user = Register();
+						user = UsuarioView.Register();
 						break;
 					}
 					case Exit: {
@@ -26,26 +27,29 @@ public class Main {
 				}
 			}
 			
+			var view = user.getView();
+			view.ShowMenu(cancelToken);
 			
-			
-			
+			if (view.IsLoggedIn() == false) {
+				user = null;
+			}
 		}
 		
 	}
 	
 	public static Usuario Login() {
-	 
-		return new Cliente(null, null, null, null, null);
+		
+		return Usuario.Login(null, null);
 	}
 	
-	public static Usuario Register() {
-		String name = (String) JOptionPane.showInputDialog("Enter name");
-		String dni = (String) JOptionPane.showInputDialog("Enter dni");
-		String pass = (String) JOptionPane.showInputDialog("Enter password");
-		
-		return Usuario.Register(name, dni, pass);
-		//Usuario.getUsuarios()
-	}
+//	public static Usuario Register() {
+//		String name = (String) JOptionPane.showInputDialog("Enter name");
+//		String dni = (String) JOptionPane.showInputDialog("Enter dni");
+//		String pass = (String) JOptionPane.showInputDialog("Enter password");
+//		
+//		return Usuario.Register(name, dni, pass);
+//		//Usuario.getUsuarios()
+//	}
 	
 	public static void ThrowUIMessage(String message) {
 		JOptionPane.showMessageDialog(null, message);

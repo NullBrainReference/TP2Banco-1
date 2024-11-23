@@ -7,6 +7,11 @@ public class Cliente extends Usuario{
 		this.tipo = tipo;
 		this.cuenta = cuenta;
 	}
+	public Cliente(String nombre, String dni, String contrasena, String tipo) {
+		super(nombre, dni, contrasena);
+		this.tipo = tipo;
+		this.cuenta = new Cuenta(0, this);
+	}
 	public String getTipo() {
 		return tipo;
 	}
@@ -25,7 +30,19 @@ public class Cliente extends Usuario{
 	}
 	@Override
 	public OpcionesCliente[] Menu() {
-		return new OpcionesCliente[] { OpcionesCliente.Transferir, OpcionesCliente.Retirar, OpcionesCliente.Depositar };
+		return new OpcionesCliente[] { 
+				OpcionesCliente.Transferir,
+				OpcionesCliente.Retirar, 
+				OpcionesCliente.Depositar,
+				OpcionesCliente.NuevaCuenta,
+				OpcionesCliente.ElegirCuenta, 
+				OpcionesCliente.Exit,
+				OpcionesCliente.LogOut};
+	}
+	
+	@Override
+	public UsuarioView getView() {
+		return new ClienView(this, getCuenta());
 	}
 	
 	
