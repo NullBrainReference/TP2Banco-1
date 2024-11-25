@@ -6,11 +6,11 @@ public class Admin extends Usuario {
 	}
 
 	@Override
-	public OpcionesCliente[] Menu() {
-		return new OpcionesCliente[] { 
-				OpcionesCliente.History,
-				OpcionesCliente.Exit,
-				OpcionesCliente.LogOut};
+	public Opciones[] Menu() {
+		return new Opciones[] { 
+				Opciones.History,
+				Opciones.Exit,
+				Opciones.LogOut};
 	}
 
 	@Override

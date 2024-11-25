@@ -1,5 +1,5 @@
 
-public enum OpcionesCliente {
+public enum Opciones {
 	Transferir("Transferir"),
 	Depositar("Depositar"),
 	Retirar("Retirar"),
@@ -17,7 +17,7 @@ public enum OpcionesCliente {
 	
 	private String stringValue;
 	
-	private OpcionesCliente(String value) {
+	private Opciones(String value) {
 		stringValue = value;
 	}
 

@@ -11,8 +11,8 @@ public class AdminView extends UsuarioView {
 
 	@Override
 	public void ShowMenu(CancellationToken token) {
-		OpcionesCliente[] options = model.Menu();
-		OpcionesCliente selection = (OpcionesCliente) JOptionPane.showInputDialog(null, "Menu", null, 0, null, options, options[0]);
+		Opciones[] options = model.Menu();
+		Opciones selection = (Opciones) JOptionPane.showInputDialog(null, "Menu", null, 0, null, options, options[0]);
 		
 		switch (selection) {
 			case Exit: {

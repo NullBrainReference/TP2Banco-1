@@ -2,11 +2,11 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-public class ClienView extends UsuarioView {
+public class ClientView extends UsuarioView {
 
 	private Cuenta cuenta;
 	
-	public ClienView(Usuario model, Cuenta cuenta) {
+	public ClientView(Usuario model, Cuenta cuenta) {
 		super(model);
 		this.cuenta = cuenta;
 	}
@@ -23,8 +23,8 @@ public class ClienView extends UsuarioView {
 	public void ShowMenu(CancellationToken token) {
 		ShowAccountInfo();
 		
-		OpcionesCliente[] options = model.Menu();
-		OpcionesCliente selection = (OpcionesCliente) JOptionPane.showInputDialog(null, "Menu", null, 0, null, options, options[0]);
+		Opciones[] options = model.Menu();
+		Opciones selection = (Opciones) JOptionPane.showInputDialog(null, "Menu", null, 0, null, options, options[0]);
 		
 		switch (selection) {
 			case Exit: {

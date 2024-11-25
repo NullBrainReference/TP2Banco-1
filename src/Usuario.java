@@ -35,9 +35,6 @@ public abstract class Usuario {
 	public static LinkedList<Usuario> getUsuarios() {
 		return usuarios;
 	}
-	public static void setUsuarios(LinkedList<Usuario> usuarios) {
-		Usuario.usuarios = usuarios;
-	}
 	
 	public static Usuario Register(String nombre, String dni, String contrasena) {
 		
@@ -119,7 +116,7 @@ public abstract class Usuario {
 		return null;
 	}
 	
-	public abstract OpcionesCliente[] Menu();
+	public abstract Opciones[] Menu();
 	
 	public abstract UsuarioView getView();
 	

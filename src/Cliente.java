@@ -30,21 +30,21 @@ public class Cliente extends Usuario{
 	}
 	
 	@Override
-	public OpcionesCliente[] Menu() {
-		return new OpcionesCliente[] { 
-				OpcionesCliente.Transferir,
-				OpcionesCliente.Retirar, 
-				OpcionesCliente.Depositar,
-				OpcionesCliente.History,
-				OpcionesCliente.NuevaCuenta,
-				OpcionesCliente.ElegirCuenta, 
-				OpcionesCliente.Exit,
-				OpcionesCliente.LogOut};
+	public Opciones[] Menu() {
+		return new Opciones[] { 
+				Opciones.Transferir,
+				Opciones.Retirar, 
+				Opciones.Depositar,
+				Opciones.History,
+				Opciones.NuevaCuenta,
+				Opciones.ElegirCuenta, 
+				Opciones.Exit,
+				Opciones.LogOut};
 	}
 	
 	@Override
 	public UsuarioView getView() {
-		return new ClienView(this, getCuenta());
+		return new ClientView(this, getCuenta());
 	}
 	
 	

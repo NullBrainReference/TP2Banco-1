@@ -50,9 +50,6 @@ public class Cuenta {
 	public int getNroCuenta() {
 		return nroCuenta;
 	}
-	public void setNroCuenta(int nroCuenta) {
-		this.nroCuenta = nroCuenta;
-	}
 	public double getSaldo() {
 		return saldo;
 	}
@@ -61,9 +58,6 @@ public class Cuenta {
 	}
 	public LinkedList<Movimiento> getMovimientos() {
 		return movimientos;
-	}
-	public void setMovimientos(LinkedList<Movimiento> movimientos) {
-		this.movimientos = movimientos;
 	}
 	
 	public void depositar(double value) {

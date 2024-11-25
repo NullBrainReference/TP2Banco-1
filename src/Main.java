@@ -9,8 +9,8 @@ public class Main {
 		while(!cancelToken.wasCanceled()) {
 			
 			while(user == null) {
-				OpcionesCliente[] options = new OpcionesCliente[] {OpcionesCliente.Login, OpcionesCliente.Register, OpcionesCliente.Exit};
-				OpcionesCliente selection = (OpcionesCliente) JOptionPane.showInputDialog(null, "Log in or Sign in", null, 0, null, options, options[0]);
+				Opciones[] options = new Opciones[] {Opciones.Login, Opciones.Register, Opciones.Exit};
+				Opciones selection = (Opciones) JOptionPane.showInputDialog(null, "Log in or Sign in", null, 0, null, options, options[0]);
 				
 				switch (selection) {
 					case Login: {
