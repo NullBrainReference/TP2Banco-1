@@ -36,6 +36,7 @@ public class Movimiento {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+	
 	@Override
 	public String toString() {
 		return "Movimiento [fecha=" + fecha + ", detalle=" + detalle + ", movimiento=" + movimiento + ", cliente="

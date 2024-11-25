@@ -131,6 +131,8 @@ public abstract class Usuario {
 			client.getCuenta().depositar(i * 100);
 			usuarios.add(client);
 		}
+		
+		usuarios.add(new Admin("The Dude", "666", "qwerty"));
 	}
 
 }

@@ -5,6 +5,7 @@ public class CancellationToken {
 	public void cancel() {
 		wasCancelled = true;
 	}
+	
 	public boolean wasCanceled() {
 		return wasCancelled;
 	}

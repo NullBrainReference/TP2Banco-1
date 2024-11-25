@@ -7,11 +7,16 @@ public abstract class UsuarioView {
 		this.model = model;
 	}
 	
+	
 	public boolean IsLoggedIn() {
 		if (model == null)
 			return false;
 		
 		return true;
+	}
+	
+	public void LogOut() {
+		model = null;
 	}
 	
 	public abstract void ShowMenu(CancellationToken token); 

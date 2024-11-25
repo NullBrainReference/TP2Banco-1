@@ -28,12 +28,14 @@ public class Cliente extends Usuario{
 	public String toString() {
 		return "Cliente [tipo=" + tipo + ", cuenta=" + cuenta + "]";
 	}
+	
 	@Override
 	public OpcionesCliente[] Menu() {
 		return new OpcionesCliente[] { 
 				OpcionesCliente.Transferir,
 				OpcionesCliente.Retirar, 
 				OpcionesCliente.Depositar,
+				OpcionesCliente.History,
 				OpcionesCliente.NuevaCuenta,
 				OpcionesCliente.ElegirCuenta, 
 				OpcionesCliente.Exit,

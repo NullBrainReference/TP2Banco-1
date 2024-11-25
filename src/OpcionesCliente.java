@@ -7,6 +7,8 @@ public enum OpcionesCliente {
 	NuevaCuenta("Nueva Cuenta"),
 	ElegirCuenta("Elegir Cuenta"),
 	
+	History("History"),
+	
 	Login("Login"),
 	Register("Register"),
 	Exit("Exit"),

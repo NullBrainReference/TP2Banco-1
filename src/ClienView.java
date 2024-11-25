@@ -48,6 +48,11 @@ public class ClienView extends UsuarioView {
 				cuenta.transferir(value, id);
 				break;
 			}
+			case History: {
+				JOptionPane.showMessageDialog(null, cuenta.getHistory());
+				
+				break;
+			}
 			case NuevaCuenta: {
 				var client = cuenta.getClient();
 				MoneyType[] types = new MoneyType[] { MoneyType.EU, MoneyType.USD, MoneyType.Rub };
@@ -72,8 +77,7 @@ public class ClienView extends UsuarioView {
 				break;
 			}
 			case LogOut: {
-				model = null;
-				cuenta = null;
+				LogOut();
 				return;
 			}
 		}

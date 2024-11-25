@@ -113,6 +113,16 @@ public class Cuenta {
 		movimientos.add(new Movimiento(LocalDateTime.now(), "transferir", (int) value, cuentaTo.cliente));
 	}
 	
+	public String getHistory() {
+		String history = "";
+		
+		for (Movimiento movimiento : movimientos) {
+			history += movimiento.toString() + "\n";
+		}
+		
+		return history;
+	}
+	
 	public static List<Cuenta> FindAllClientAccounts(Cliente client){
 		List<Cuenta> results = new LinkedList<Cuenta>();
 		
@@ -125,7 +135,7 @@ public class Cuenta {
 		return results;
 	}
 	
-	private Cuenta find(int nroCuenta) {
+	public static Cuenta find(int nroCuenta) {
 		for (Cuenta cuenta : cuentas) {
 			if (cuenta.getNroCuenta() == nroCuenta) {
 				return cuenta;
